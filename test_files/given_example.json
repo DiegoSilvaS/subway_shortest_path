@@ -1,0 +1,26 @@
+[
+  [
+    { "name": "A" },
+    { "name": "B" },
+    { "name": "C" }
+  ],
+  [
+    { "name": "C" },
+    { "name": "D" },
+    { "name": "E" },
+    { "name": "F" }
+  ],
+  [
+    { "name": "C" },
+    { "name": "G" , "color": "V" },
+    { "name": "H", "color": "R" },
+    { "name": "I", "color": "V" },
+    { "name": "F"}
+  ],
+  [
+    { "name": "C" },
+    { "name": "D" },
+    { "name": "E" },
+    { "name": "F"}
+  ]
+]
