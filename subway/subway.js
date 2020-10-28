@@ -1,4 +1,5 @@
 import { Station } from '../station/station.js';
+import bidirectional_bfs from './bidirectional_bfs.js';
 
 const no_color = Symbol('common station');
 
@@ -36,6 +37,21 @@ Subway.prototype
     }
 
     this.add_line(line, near_stations);
+  };
+
+Subway.prototype
+  .shortest_path = function (start_name, end_name) {
+    const start_station = this.stations.get(start_name);
+    const end_station = this.stations.get(end_name);
+    const restriction = (station) => station.color === no_color || station.color === this.train_color;
+
+    if (!(start_station && end_station)) {
+      console.log('Either one or both of the station names provided where not found in the file');
+    } else if (!(restriction(start_station) && restriction(end_station))) {
+      console.log('Either one or both of the station are unreachable due to the color');
+    } else {
+      return bidirectional_bfs(start_station, end_station, restriction);
+    }
   };
 
 export { Subway };
